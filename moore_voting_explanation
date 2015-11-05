@@ -1,0 +1,18 @@
+How does Moore's algorith work ?
+
+The Moore's algorithm finds the majority element in an array. A majority element is one that occurs more than n/2 of the times.
+For instance, consider this array of 12 elements:
+		5, 1, 5, 5, 3, 5, 90, 88, 5, 5, 5, 34
+
+In the best case of arrangement of elements, they get repeated and we can find this out by checking the successive elements.
+
+However, there is no way of finding if the number of occurences is at least n/2. This is the issue that Moore takes care of.
+The algo keeps track of the candidate for the majority element and the votes for it.
+When the number of votes drops to zero, the element currently in the iteration is made the candidate element. 
+This continues till we reach the end of array.
+
+Proof of correctness:
+	This is cutting out for every element a corresponding non equal element.
+	When such a pairing occurs, as the majority element occurs at least n/2+1 times, at least one pair will have a repeated element.
+	This is what the vote keeps track of. 
+
